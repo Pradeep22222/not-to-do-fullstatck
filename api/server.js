@@ -1,18 +1,20 @@
 import express from "express";
+import taskRouter from "./src/routers/taskRouter.js";
 const app = express();
 const PORT = 8000;
-import taskRouter from "./src/routers/taskRouter.js"
-app.use((req, res, next) => {
-    console.log(error);
-    res.json({ 
-        status: "error",
-        message: error.message,
-    })
-})
+// middlewares
+app.use(express.json());
+app.use((error, req, res, next) => {
+  const status = error.status || 404;
+  res.status(status).json({
+    status: "error",
+    message: error.message,
+  });
+});
 app.listen(PORT, (error) => {
-    error && console.log(error)
-    console.log(`server running at http://localhost:${PORT}`)
-})
+  error && console.log(error);
+  console.log(`server running at http://localhost:${PORT}`);
+});
 app.use("/api/v1/task", taskRouter);
 app.post("/api/v1/task", (req, res) => {
   res.json({

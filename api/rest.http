@@ -1,8 +1,19 @@
-### calling root api with get method
+### root api
 GET  http://localhost:8000/
 
-### calling root api with get method
-GET  http://localhost:8000/api/v1/task
+### fetch all task
+GET  http://localhost:8000/api/v1/task/
 
-### calling root api with post method
+### add a new task
 POST  http://localhost:8000/api/v1/task
+Content-Type: application/json
+
+{
+    "task":"chat",
+    "hr":"2"
+}
+### update or switch task
+PATCH  http://localhost:8000/api/v1/task
+
+### delete a task
+DELETE  http://localhost:8000/api/v1/task/1
