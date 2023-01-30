@@ -2,6 +2,9 @@ import express from "express";
 import taskRouter from "./src/routers/taskRouter.js";
 const app = express();
 const PORT = 8000;
+// db connect
+import { dbConnect } from "./src/config/dbConfig.js";
+dbConnect();
 // middlewares
 app.use(express.json());
 app.use((error, req, res, next) => {
