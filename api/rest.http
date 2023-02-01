@@ -2,14 +2,14 @@
 GET  http://localhost:8000/
 
 ### fetch all task
-GET  http://localhost:8000/api/v1/task/
+GET  http://localhost:8000/api/v1/task/63da37d57ddaabd865f2990b
 
 ### add a new task
 POST  http://localhost:8000/api/v1/task
 Content-Type: application/json
 
 {
-    "task":"chat",
+    "task":"chat buddy",
     "hr":"2"
 }
 ### update or switch task
