@@ -2,18 +2,32 @@
 GET  http://localhost:8000/
 
 ### fetch all task
-GET  http://localhost:8000/api/v1/task/63da37d57ddaabd865f2990b
+GET  http://localhost:8000/api/v1/task/
 
 ### add a new task
 POST  http://localhost:8000/api/v1/task
 Content-Type: application/json
 
 {
-    "task":"chat buddy",
+    "task":"test4",
     "hr":"2"
 }
 ### update or switch task
 PATCH  http://localhost:8000/api/v1/task
+Content-Type: application/json
+
+{
+    "_id":"63db9f20631d783e7f999b79",
+    "type":"bad"
+}
+### delete a task
+DELETE  http://localhost:8000/api/v1/task/63da37d57ddaabd865f2990b
 
 ### delete a task
-DELETE  http://localhost:8000/api/v1/task/1
+DELETE  http://localhost:8000/api/v1/task/
+Content-Type: application/json
+
+{
+    "ids":["63da37477ddaabd865f29909","63dba362edd971f1489ee6a7"]
+    
+}
